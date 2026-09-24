@@ -11,8 +11,8 @@ const blogsRoutes = require('./routes/blogsRoutes');
 const experienceRoutes = require('./routes/experienceRoutes');
 const testimonialsRoutes = require('./routes/testimonialsRoutes');
 const servicesRoutes = require('./routes/servicesRoutes');
-const uploadRoutes = require('./routes/uploadRoutes');
-const contactRoutes = require('./routes/contactRoutes');
+// const uploadRoutes = require('./routes/uploadRoutes');
+// const contactRoutes = require('./routes/contactRoutes');
 
 const app = express();
 
@@ -41,8 +41,8 @@ app.use('/blogs', blogsRoutes);
 app.use('/experience', experienceRoutes);
 app.use('/testimonials', testimonialsRoutes);
 app.use('/services', servicesRoutes);
-app.use('/upload', uploadRoutes);
-app.use('/contact', contactRoutes);
+// app.use('/upload', uploadRoutes);
+// app.use('/contact', contactRoutes);
 
 // ---- 404 handler ----
 app.use((req, res) => {

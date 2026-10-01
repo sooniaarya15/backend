@@ -43,7 +43,7 @@ function createCrudController(table, allowedFields, orderBy = 'sort_order ASC, i
       if (fields.length === 0) {
         return res.status(400).json({ message: 'No valid fields provided' });
       }
-      const values = fields.map((f) => req.body[f]);
+      const values = fields.map((f) => (req.body[f] === '' ? null : req.body[f]));
       const placeholders = fields.map((_, i) => `$${i + 1}`).join(', ');
 
       const query = `INSERT INTO ${table} (${fields.join(', ')}) VALUES (${placeholders}) RETURNING *`;
@@ -62,7 +62,7 @@ function createCrudController(table, allowedFields, orderBy = 'sort_order ASC, i
       if (fields.length === 0) {
         return res.status(400).json({ message: 'No valid fields provided' });
       }
-      const values = fields.map((f) => req.body[f]);
+      const values = fields.map((f) => (req.body[f] === '' ? null : req.body[f]));
       const setClause = fields.map((f, i) => `${f} = $${i + 1}`).join(', ');
 
       const query = `UPDATE ${table} SET ${setClause} WHERE id = $${fields.length + 1} RETURNING *`;

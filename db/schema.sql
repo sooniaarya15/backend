@@ -1,8 +1,3 @@
--- ============================================================
--- Portfolio CMS Database Schema
--- Run this in Supabase: Dashboard -> SQL Editor -> New Query
--- ============================================================
-
 -- Admin / CMS users
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,

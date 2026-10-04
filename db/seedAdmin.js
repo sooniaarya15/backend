@@ -1,5 +1,3 @@
-// Run once with: npm run seed:admin
-// Creates (or updates) the first CMS admin user using ADMIN_EMAIL / ADMIN_PASSWORD from .env
 require('dotenv').config();
 const bcrypt = require('bcryptjs');
 const pool = require('../src/config/db');
